@@ -1,4 +1,13 @@
+// SearchBooks.js:
+
+// Use the Apollo useMutation() Hook to execute the SAVE_BOOK mutation in the handleSaveBook() function instead of the saveBook() function imported from the API file.
+
+// Make sure you keep the logic for saving the book's ID to state in the try...catch block!
+
 import React, { useState, useEffect } from 'react';
+import { useMutation } from '@apollo/client';
+import { SAVE_BOOK } from '../utils/mutations';
+
 import {
   Container,
   Col,
@@ -9,10 +18,12 @@ import {
 } from 'react-bootstrap';
 
 import Auth from '../utils/auth';
-import { saveBook, searchGoogleBooks } from '../utils/API';
+import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 const SearchBooks = () => {
+  const [saveBook, {error }] = useMutation(SAVE_BOOK)
+
   // create state for holding returned google api data
   const [searchedBooks, setSearchedBooks] = useState([]);
   // create state for holding our search field data
@@ -72,7 +83,9 @@ const SearchBooks = () => {
     }
 
     try {
-      const response = await saveBook(bookToSave, token);
+      const response = await saveBook({variables: {
+        input: {...bookToSave}
+      }})
 
       if (!response.ok) {
         throw new Error('something went wrong!');
@@ -114,12 +127,12 @@ const SearchBooks = () => {
 
       <Container>
         <h2 className='pt-5'>
-          {searchedBooks.length
+          {searchedBooks?.length
             ? `Viewing ${searchedBooks.length} results:`
             : 'Search for a book to begin'}
         </h2>
         <Row>
-          {searchedBooks.map((book) => {
+          {searchedBooks?.map((book) => {
             return (
               <Col md="4">
                 <Card key={book.bookId} border='dark'>

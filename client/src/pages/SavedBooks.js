@@ -9,10 +9,10 @@ import { useQuery, useMutation } from '@apollo/client';
 import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations'
 
-import React, { useState, 
-  // useEffect 
-  // useQuery
-} from 'react';
+// import React, { useState, 
+//   // useEffect 
+//   // useQuery
+// } from 'react';
 import {
   Container,
   Card,
@@ -87,7 +87,7 @@ const SavedBooks = () => {
       // upon success, remove book's id from localStorage
       removeBookId(bookId);
     } catch (err) {
-      console.error(err);
+      console.error(error);
     }
   };
 

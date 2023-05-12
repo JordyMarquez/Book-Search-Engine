@@ -39,7 +39,7 @@ type User {
     _id: ID
     username: String!
     email: String!
-    bookCount: Integer
+    bookCount: Int
     savedBooks: [Book]
 }
 
@@ -52,7 +52,7 @@ type Book {
     link: String
 }
 
-type BookInput {
+input BookInput {
     bookId: ID
     authors: [String]
     description: String
@@ -62,23 +62,22 @@ type BookInput {
 }
 
 type Auth {
-    token: String
-    user: [User]
+    token: ID!
+    user: User
 }
 
 type Query {
-    me: [User]
+    me: User
 }
 
 type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    saveBook(input: BookInput): User
-    removeBook(bookId: String): User
+    saveBook(bookData: BookInput!): User
+    removeBook(bookId: ID!): User
 }
-
 `
-
+module.exports = typeDefs
 
 
 // typeDefs.js: Define the necessary Query and Mutation types:

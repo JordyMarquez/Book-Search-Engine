@@ -1,22 +1,17 @@
 # Book Search Engine Starter Code
 
-Questions: 
+## Description
 
-schemas/resolvers.js:
-Do we not have to do a getsingle user in resolvers according to user-controller.js?
+This app allows a user to search for books, ave them to a reading list, and delete them. This app uses react, apollo/client, and graphql to connect both front-end and back end functionality.
 
-Confused about async (parent, { userId, }, context)
+## Usage
 
-typedef.js:
-What is query me ? is just a naming convention; can be called user and still do the same thing
-where am I getting token from?
+To use this application the user must sign up or login to save and delete any books they search for. To be able to use this app, the user must run `npm i`, `npm i @apollo/client`, in the ___ folder. Once these are installed, the user run `npm run dev` to get the app running online. 
 
-client/src/mutations:
-first line references the client input 
-second line references that same input and the bottom HAS to match the typeDefs
-mutation loginUser($email: String!, $password: String!) {
-    loginUser(email: $email, password: $password) {
-        token
+## Preview
+
+## Link
+
 
 
 

@@ -66,7 +66,7 @@ const SearchBooks = () => {
       setSearchedBooks(bookData);
       setSearchInput('');
     } catch (err) {
-      console.error(err);
+      console.error(error);
     }
   };
 
@@ -84,7 +84,7 @@ const SearchBooks = () => {
 
     try {
       const response = await saveBook({variables: {
-        input: {...bookToSave}
+        bookData: {...bookToSave}
       }})
 
       if (!response.ok) {
@@ -134,8 +134,8 @@ const SearchBooks = () => {
         <Row>
           {searchedBooks?.map((book) => {
             return (
-              <Col md="4">
-                <Card key={book.bookId} border='dark'>
+              <Col key={book.bookId} md="4">
+                <Card  border='dark'>
                   {book.image ? (
                     <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
                   ) : null}

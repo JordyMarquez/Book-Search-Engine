@@ -82,11 +82,17 @@ const SearchBooks = () => {
       return false;
     }
 
-    try {
-      const response = await saveBook({variables: {
-        bookData: {...bookToSave}
-      }})
+    // try {
+    //   const response = await saveBook({variables: {
+    //     bookData: {...bookToSave}
+    //   }})
 
+
+     try {
+      const {data}  = await saveBook({ variables: {
+        bookData: bookToSave
+      }})
+     
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
       // }
@@ -127,12 +133,12 @@ const SearchBooks = () => {
 
       <Container>
         <h2 className='pt-5'>
-          {searchedBooks?.length
+          {searchedBooks.length
             ? `Viewing ${searchedBooks.length} results:`
             : 'Search for a book to begin'}
         </h2>
         <Row>
-          {searchedBooks?.map((book) => {
+          {searchedBooks.map((book) => {
             return (
               <Col key={book.bookId} md="4">
                 <Card  border='dark'>

@@ -16,8 +16,9 @@ https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mon
 
 
 ## Preview
+<img src="Book Search App.png">
 
-## Link
+## Heroku Link
 
 https://jordy-book-search-engine.herokuapp.com/
 

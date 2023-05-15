@@ -6,18 +6,21 @@ This app allows a user to search for books, ave them to a reading list, and dele
 
 ## Usage
 
-To use this application the user must sign up or login to save and delete any books they search for. To be able to use this app, the user must run `npm i`, `npm i @apollo/client`, in the ___ folder. Once these are installed, the user run `npm run dev` to get the app running online. 
+To use this application the user must sign up or login to save and delete any books they search for. To be able to use this app, the user must run `npm i` in the root folder,  `npm i @apollo/client` in the client folder & run `npm i apollo-client-express` in the server folder. Once these are installed, the user can run `npm run develop` to get the app running online for testing. To deploy the app to Heroku, the user must create a Mongo Atlas account to link with. Feel free to reference the following for a step-by-step: 
+
+https://coding-boot-camp.github.io/full-stack/mongodb/how-to-set-up-mongodb-atlas
+
+https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas
+
+
+
 
 ## Preview
 
 ## Link
 
-saving to multiple users
-delete button; fixed by adding _id to mutations in client/src/utils folder; but whyyy???
-heroku deployment
+https://jordy-book-search-engine.herokuapp.com/
 
-findOneandUpdate vs findOnebyId
-which files are being called on by which?
 
 
 

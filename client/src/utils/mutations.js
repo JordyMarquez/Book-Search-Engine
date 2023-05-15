@@ -21,7 +21,8 @@ export const LOGIN_USER = gql`
     }
  }
 `;
-// line 27 down is from typedefs
+
+// line 28 down is from typedefs on the server side, whereas the first line is the input from the client side
 export const ADD_USER = gql`
 mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {

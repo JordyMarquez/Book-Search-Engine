@@ -4,17 +4,12 @@ const { User, Book } = require('../models')
 const { signToken } = require('../utils/auth');
 const { sign } = require('jsonwebtoken');
 
-// HINT
-// Use the functionality in the user-controller.js as a guide.
+// resolver names like "me" or "addUser" have to match the typedefs mutations and queries
 
 const resolvers = {
 
     Query: {
-        // Get single user
-        // user: async (parent, { _id }) => {
-        //     const params = _id ? { _id } : {};
-        //     return User.find(params);
-        // },
+       
         me: async (parent, args, context) => {
             if (context.user) {
 
@@ -74,6 +69,7 @@ const resolvers = {
         },
 
         // cant perform query's on a schema
+        
         removeBook: async (parent, { bookId }, context) => {
 
             if (context.user) {

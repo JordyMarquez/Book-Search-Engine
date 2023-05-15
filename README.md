@@ -12,6 +12,12 @@ To use this application the user must sign up or login to save and delete any bo
 
 ## Link
 
+saving to multiple users
+delete button; fixed by adding _id to mutations in client/src/utils folder; but whyyy???
+heroku deployment
+
+findOneandUpdate vs findOnebyId
+which files are being called on by which?
 
 
 

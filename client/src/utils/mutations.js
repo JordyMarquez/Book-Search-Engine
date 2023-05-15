@@ -21,7 +21,7 @@ export const LOGIN_USER = gql`
     }
  }
 `;
-
+// line 27 down is from typedefs
 export const ADD_USER = gql`
 mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
@@ -37,6 +37,7 @@ mutation addUser($username: String!, $email: String!, $password: String!) {
 export const SAVE_BOOK = gql`
 mutation saveBook($bookData: BookInput!) {
     saveBook(bookData: $bookData) {
+        _id
         username
         email
         savedBooks {
@@ -54,6 +55,7 @@ mutation saveBook($bookData: BookInput!) {
 export const REMOVE_BOOK = gql`
 mutation removeBook($bookId: String!) {
     removeBook(bookId: $bookId) {
+        _id
         username
         email 
         savedBooks {

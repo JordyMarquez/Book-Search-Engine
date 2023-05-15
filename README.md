@@ -2,7 +2,7 @@
 
 ## Description
 
-This app allows a user to search for books, ave them to a reading list, and delete them. This app uses react, apollo/client, and graphql to connect both front-end and back end functionality.
+This app allows a user to search for books, add them to a reading list, and delete them. This app uses react, apollo/client, and graphql to connect both front-end and back end functionality.
 
 ## Usage
 
